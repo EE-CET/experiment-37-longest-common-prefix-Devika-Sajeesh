@@ -1,11 +1,25 @@
-public class LongestCommonPrefix {
-    
-        // TODO: Read N
-        // TODO: Handle the newline character after reading N
-        // TODO: Read N strings into an array
-        // TODO: Find the longest common prefix
-        // Hint: Start with the first string as the 'prefix'. 
-        // Iterate through the rest, shortening the 'prefix' until it matches the start of the current string.
-        // TODO: If prefix is empty, print "-1", otherwise print the prefix.
-    
+import java.util.Scanner;
+
+public class LongestCommonPrefix{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+        sc.nextLine();
+
+        String prefix = sc.nextLine();
+
+        for (int i = 1; i < N; i++) {
+            String s = sc.nextLine();
+            while (!s.startsWith(prefix)) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) {
+                    System.out.println("-1");
+                    return;
+                }
+            }
+        }
+
+        System.out.println(prefix);
+    }
 }
