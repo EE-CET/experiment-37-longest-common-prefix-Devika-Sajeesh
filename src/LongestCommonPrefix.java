@@ -7,12 +7,11 @@ public class LongestCommonPrefix {
                 
                 // Read N
                 int N = sc.nextInt();
-                sc.nextLine(); // Handle the newline character after reading N
                 
                 // Read N strings into an array
                 String[] strings = new String[N];
                 for (int i = 0; i < N; i++) {
-                        strings[i] = sc.nextLine();
+                        strings[i] = sc.next();
                 }
                 sc.close();
                 
